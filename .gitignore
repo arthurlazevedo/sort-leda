@@ -1,0 +1,8 @@
+# truque para ignorar executáveis
+*
+
+!*.*
+!*/
+
+*.class
+bin/
