@@ -1,7 +1,8 @@
-# truque para ignorar executáveis
+# truque para ignorar executáveis linux
 *
 !*.*
 !*/
 
 *.class
+*.exe
 bin/

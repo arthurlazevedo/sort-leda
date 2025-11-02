@@ -1,4 +1,4 @@
-import random
+from random import randint
 from itertools import repeat
 
 def in_place(lista):
@@ -25,7 +25,7 @@ def out_place(lista):
 
 
 if __name__ == '__main__':
-    lista1 = [random.randint(0, 10000) for _ in repeat(None, 1000)]
+    lista1 = [randint(0, 10000) for _ in repeat(None, 1000)]
     print(out_place(lista1))
 
     lista2 = lista1.copy()
