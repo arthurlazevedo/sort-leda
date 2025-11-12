@@ -82,17 +82,6 @@ void recursivo(int* v, int ini, int fim)
 }
 
 
-void print_lista(int* lista, size_t tamanho)
-{
-    printf("[");
-    for (int i = 0; i < tamanho - 1; i++) {
-        printf("%d, ", lista[i]);
-    }
-    if (tamanho > 0) printf("%d", lista[tamanho - 1]);
-    printf("]\n");
-}
-
-
 void iterativo(int* v, size_t tamanho)
 {
     int pilha[tamanho]; // na teoria não cresce mais do que log2(tamanho)? não consegui usar a função por algum motivo então enfim
@@ -116,6 +105,17 @@ void iterativo(int* v, size_t tamanho)
             pilha[top++] = fim;
         }
     }
+}
+
+
+void print_lista(int* lista, size_t tamanho)
+{
+    printf("[");
+    for (int i = 0; i < tamanho - 1; i++) {
+        printf("%d, ", lista[i]);
+    }
+    if (tamanho > 0) printf("%d", lista[tamanho - 1]);
+    printf("]\n");
 }
 
 

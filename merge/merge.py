@@ -52,7 +52,7 @@ def merge_in_place(v, ini, meio, fim): # lento pra porra pqp
                 v[j], v[i] = v[i], v[j]
         else:
             last_swap = 'i'
-        
+
         i += 1
 
 

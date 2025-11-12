@@ -31,7 +31,7 @@ def lomuto(v, ini, fim):
         if v[j] <= pivot:
             i += 1
             swap(v, i, j)
-    
+
     swap(v, i, ini)
     return i
 
@@ -49,7 +49,7 @@ def hoare(v, ini, fim):
             i += 1
         while i <= j and v[j] > pivot:
             j -= 1
-        
+
         if i < j:
             swap(v, i, j)
 
