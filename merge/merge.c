@@ -39,7 +39,7 @@ void insere_ordenado(int* v, int ini, int fim)
 }
 
 
-void merge_out_place(int* v, int ini, int meio, int fim) // TODO: iterativo e merge_in_place
+void merge_out_place(int* v, int ini, int meio, int fim)
 {
     int tamanho_aux = fim - ini + 1;
     int aux[tamanho_aux];

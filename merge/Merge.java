@@ -1,4 +1,3 @@
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Random;
 
@@ -7,7 +6,7 @@ public class Merge {
     public static void main(String[] args) {
         Random random = new Random();
 
-        int[] lista1 = random.ints(601301, 0, 100000).toArray();
+        int[] lista1 = random.ints(64, 0, 100000).toArray();
         int[] lista2 = Arrays.copyOf(lista1, lista1.length);
 
         Arrays.sort(lista1);
@@ -39,36 +38,14 @@ public class Merge {
                 int fim = Math.min(i + faixa, tamanho) - 1;
                 int meio = (i + fim) / 2;
                 mergeOutPlace(v, i, meio, fim);
+
+                if (i + faixa > tamanho) {
+                    mergeOutPlace(v, i - faixa, i - 1, v.length - 1);
+                }
             }
 
             faixa *= 2;
         }
-
-        ArrayList<Integer> potencias = new ArrayList<>();
-        int parteFudida = tamanho - faixa / 2;
-
-        if (parteFudida == 0) return;
-
-        while (parteFudida > 0) {
-            int potencia = 1;
-            while (potencia <= parteFudida) {
-                potencia *= 2;
-            }
-
-            potencia = Math.max(potencia / 2, 1);
-            potencias.add(potencia);
-            parteFudida -= potencia;
-        }
-
-        int meio = tamanho - 1;
-        for (int i = potencias.size() - 1; i > 0; i--) {
-            meio -= potencias.get(i);
-            int ini = meio - potencias.get(i - 1) + 1;
-            mergeOutPlace(v, ini, meio, tamanho - 1);
-        }
-
-        meio -= potencias.get(0);
-        mergeOutPlace(v, 0, meio, tamanho - 1);
     }
 
 
